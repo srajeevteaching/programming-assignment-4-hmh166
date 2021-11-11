@@ -10,7 +10,6 @@ rank = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 
 value = {'2', '3', '4', '5', '6', '7', '8', '9', '10', '10',
          '10', '10', '11'}
 player1 = input
-
 play = True
 
 
@@ -59,7 +58,7 @@ def add_card(value, rank):
 
 
 def ace():
-    while value > 21 and aces:
+    while value > 21:
         value -= 10
         aces -= 1
 
@@ -73,14 +72,14 @@ def hit(deck, hand):
 
 def hit_or_stand(deck, hand):
     while True:
-        x = input("Would you like to Hit or Stand? Enter 'h' or 's'")
-        if x[0]() == 'hit':
+        x = input("Would you like to Hit or Stand? Enter 'hit' or 'stand'")
+        if x == 'hit':
             hit(deck, hand)
-        elif x[0]() == 'stand':
-            print("Player stands. Dealer is playing.")
+        elif == 'stand':
+            print("Player stands. Dealer is now playing.")
             play = False
         else:
-            print("Sorry, please try again.")
+            print("Try again.")
 
 
 # function to display cards
